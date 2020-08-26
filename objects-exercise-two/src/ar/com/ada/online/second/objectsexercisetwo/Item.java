@@ -10,9 +10,9 @@ public class Item {
     Double price;
     Double tax;
     Date expirationDate;
-    Double total;
 
-    //cree el objeto ahora de clase Date --> por si mismo representa la fecha actual (25/08/2020)
+
+    //cree el objeto ahora de clase Date --> por si mismo representa la fecha actual
     Date ahora = new Date();
 
     //metodos de la clase
@@ -24,18 +24,16 @@ public class Item {
 
 
     Double getTotalToPay() {
-        total = tax + price;              //metodo que va a calcular el total = precio+impuesto
-        return total;                     //devuelve el valor total
+        return tax + price;              //metodo que va a calcular el total = precio+impuesto
     }
 
 
     Boolean canItBeSold(boolean b) {
-        if (ahora.compareTo(expirationDate) > 0) {
-            System.out.println("Item no habilitato para la venta");
-            return false;
+        if (expirationDate.compareTo(ahora) > 0) {
+            return true;
         } else {
-            System.out.println(expirationDate);
+            System.out.println("Item no habilitado para la venta");
         }
-        return true;
+        return false;
     }
 }
