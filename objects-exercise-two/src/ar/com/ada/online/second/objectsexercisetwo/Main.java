@@ -9,28 +9,35 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         Item item = new Item();
-
         Scanner scan = new Scanner(System.in);
 
 
         System.out.println("Ingrese el nombre del item");
-        item.name = scan.next();
+        item.name = scan.nextLine();
 
         System.out.println("Ingrese el precio");
-        item.price = scan.nextDouble();
+        //item.price = scan.nextDouble();
+        item.price = Double.valueOf(scan.next());
 
         System.out.println("Ingrese la fecha de vencimiento en formato dd/MM/yyyy");
-        String fechaPedida = scan.next();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        item.expirationDate = dateFormat.parse(scan.next());
 
-        SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
-        item.expirationDate = fecha.parse(fechaPedida);
+        item.calculateTax();
 
+        if (item.canItBeSold()) {
+            Double totalToPay = item.getTotalToPay();
+            System.out.printf("*Nombre: %s\n*Precio: %.2f\n*Impuesto: %.2f\n*Total a pagar: %.2f",
+                    item.name, item.price, item.tax , totalToPay
+            );
 
-        if (item.canItBeSold(true)) {
-            System.out.print("Nombre del item: " + item.name + " \nPrecio: " + item.price + "  \nImpuesto: " + item.calculateTax() + "\nEl total a pagar es: " + item.getTotalToPay());
         } else {
-            item.canItBeSold(false);
+            System.out.println("Item no habilitado para la venta");
         }
+
+
+
+
 
 
     }

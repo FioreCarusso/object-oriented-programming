@@ -12,28 +12,25 @@ public class Item {
     Date expirationDate;
 
 
-    //cree el objeto ahora de clase Date --> por si mismo representa la fecha actual
-    Date ahora = new Date();
+
 
     //metodos de la clase
 
-    Double calculateTax() {
-        tax = price * 0.21;               //fije el impuesto iva de 21%
-        return tax;                       // va a retornar el valor impuesto
+    void calculateTax() {
+        this.tax = this.price * 0.21;
     }
 
 
     Double getTotalToPay() {
-        return tax + price;              //metodo que va a calcular el total = precio+impuesto
+        Double result = this.tax + this.price;
+        return result;
     }
 
 
-    Boolean canItBeSold(boolean b) {
-        if (expirationDate.compareTo(ahora) > 0) {
-            return true;
-        } else {
-            System.out.println("Item no habilitado para la venta");
-        }
-        return false;
+    Boolean canItBeSold(){
+        Date today = new Date();
+        Boolean result = expirationDate.after(today);
+        return result;
     }
+
 }
