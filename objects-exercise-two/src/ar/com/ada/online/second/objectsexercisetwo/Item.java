@@ -12,8 +12,6 @@ public class Item {
     Date expirationDate;
 
 
-
-
     //metodos de la clase
 
     void calculateTax() {
@@ -26,11 +24,12 @@ public class Item {
         return result;
     }
 
-
-    Boolean canItBeSold(){
-        Date today = new Date();
-        Boolean result = expirationDate.after(today);
-        return result;
+    //El metodo es necesario para establecer cuando el item puede ser vendido
+    //Sera vendido si la fecha de vencimiento es mayor a la fecha actual (si va despues)
+    Boolean canItBeSold() {
+        Date today = new Date();                           //creo el obj today de tipo Date
+        Boolean result = expirationDate.after(today);      //result = fechaVencimiento despues de hoy
+        return result;                                     //el valor de retorno del metodo
     }
 
 }
