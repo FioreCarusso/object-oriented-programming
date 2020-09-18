@@ -2,16 +2,45 @@ package ar.com.ada.online.second.parameters;
 
 public class Result {
 
-    private Integer resultSum;
-    private Integer resultSubtraction;
-    private Integer multiplicacion;
-    private Integer division;
+    private Double resultSum;
+    private Double resultSubtraction;
+    private Double resultMultiplication;
+    private Double resultDivision;
 
-    public Integer getResultSum() {
+
+    public Result() {
+
+    }
+
+    public Double getResultSum() {
         return resultSum;
     }
 
-    public void setResultSum(Integer resultSum) {
+    public void setResultSum(Double resultSum) {
         this.resultSum = resultSum;
+    }
+
+    public Double getResultSubtraction() {
+        return resultSubtraction;
+    }
+
+    public void setResultSubtraction(Double resultSubtraction) {
+        this.resultSubtraction = resultSubtraction;
+    }
+
+    public Double getResultMultiplication() {
+        return resultMultiplication;
+    }
+
+    public void setResultMultiplication(Double resultMultiplication) {
+        this.resultMultiplication = resultMultiplication;
+    }
+
+    public Double getResultDivision() {
+        return resultDivision;
+    }
+
+    public void setResultDivision(Double resultDivision) {
+        this.resultDivision = resultDivision;
     }
 }
