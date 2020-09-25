@@ -2,16 +2,19 @@ package ar.com.ada.online.second.parameters;
 
 public class Result {
 
+
+    //definicion de atributos
     private Double resultSum;
     private Double resultSubtraction;
     private Double resultMultiplication;
     private Double resultDivision;
 
-
+    //constructor vacio
     public Result() {
 
     }
 
+    //getters y setters
     public Double getResultSum() {
         return resultSum;
     }

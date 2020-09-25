@@ -2,12 +2,16 @@ package ar.com.ada.online.second.parameters;
 
 public class Arithmetic {
 
-//metodos
 
 
-    public static void sum(Result suma, double a, double b) {  //toma por parametro el objeto Result y los datos primitivos
-        double resultado = a + b;                                    //resuelve la operacion pedida
-        suma.setResultSum(resultado);                        //objeto.setmetodo(resultado) --> asigna el resultado al atributo del obj mediante setters
+    //los metodos toman por parametro los objetos Result y los datos primitivos
+    public static void sum(Result suma, double a, double b) {
+
+        //variable que contiene el resultado de la operacion
+        double resultado = a + b;
+        //seteo los atributos de los objetos, paso por parametro la variable anterior
+        suma.setResultSum(resultado);
+        //imprimo
         System.out.println("La suma de estos dos numeros es: " + resultado);
 
     }
