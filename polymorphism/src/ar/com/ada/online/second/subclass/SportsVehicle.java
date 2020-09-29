@@ -44,8 +44,8 @@ public class SportsVehicle extends Vehicle {
 
         } else if (rpm > 301 && rpm < 600) {
             return String.format("\nFICHA TECNICA\nMarca %s\nModelo: %s\nAnio: %d\n" +
-                    "Si tienes este auto, debe considerar participar en NASCAR" ,
-                    this.brand , this.model , this.year);
+                            "Si tienes este auto, debe considerar participar en NASCAR",
+                    this.brand, this.model, this.year);
 
         } else if (rpm > 601) {
             return ("FICHA TECNICA\nMarca %s\nModelo: %s\nAnio: %d\n" + "¿Eres parte del elenco de rápidos y furiosos?");
